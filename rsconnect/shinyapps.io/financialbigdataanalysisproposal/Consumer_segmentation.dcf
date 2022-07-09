@@ -1,0 +1,13 @@
+name: Consumer_segmentation
+title: Consumer_segmentation
+username:
+account: financialbigdataanalysisproposal
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6490939
+bundleId: 6017226
+url: https://financialbigdataanalysisproposal.shinyapps.io/Consumer_segmentation/
+when: 1655472843.8658
+lastSyncTime: 1655472843.86583
+asMultiple: FALSE
+asStatic: FALSE
