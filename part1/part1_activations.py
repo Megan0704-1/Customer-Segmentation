@@ -103,12 +103,14 @@ class SimpleMLP(nn.Module):
         self.fc1 = nn.Linear(784, hidden)
         self.fc2 = nn.Linear(hidden, 128)
         self.fc3 = nn.Linear(128, 10)
+        self.softmax = nn.Softmax(dim=1)
 
     def forward(self, x):
         x = x.view(-1, 784)
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
-        logits = F.relu(self.fc3(x))
+        x = F.relu(self.fc3(x))
+        logits = self.softmax(x)
 
         return logits
 
