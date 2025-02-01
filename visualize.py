@@ -28,6 +28,7 @@ parser.add_argument(
     "--model-type",
     type=str,
     default="mlp",
+    choices = ["mlp", "cnn", "resnet"],
     help="Choice which model to use",
 )
 
@@ -41,10 +42,18 @@ if args.model_type == "mlp":
     from part1.part1_v1 import SimpleMLP
 
     model = SimpleMLP()
+    data = torch.rand(batch_size, 3, 28, 28)
 elif args.model_type == "cnn":
     from part2 import SimpleCNN
 
     model = SimpleCNN()
+    data = torch.rand(batch_size, 3, 28, 28)
+elif args.model_type == "resnet":
+    from torchvision import models
+
+    model = models.resnet18(pretrained = True)
+    model.eval()
+    data = torch.rand(64, 3, 224, 224)
 else:
     print(f"Unrecognize model type")
     exit(1)
@@ -53,7 +62,6 @@ else:
 
 batch_size = 32
 
-data = torch.rand(batch_size, 3, 28, 28)
 
 torch.onnx.export(
     model,  # model being run
