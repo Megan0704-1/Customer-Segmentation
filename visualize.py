@@ -9,7 +9,7 @@ from torchvision import datasets, transforms
 from torch.optim.lr_scheduler import StepLR
 import time
 
-from part1 import SimpleMLP
+from part1.part1 import SimpleMLP
 from part2 import SimpleCNN
 
 parser = argparse.ArgumentParser()
