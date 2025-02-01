@@ -12,14 +12,14 @@ parser.add_argument(
     "--hidden-neurons",
     type=int,
     default=128,
-    help="Number of hidden neurons in the Simple MLP model"
+    help="Number of hidden neurons in the Simple MLP model",
 )
 
 parser.add_argument(
     "--layers",
     type=int,
     default=3,
-    help="Number of hidden layers in the Simple MLP model"
+    help="Number of hidden layers in the Simple MLP model",
 )
 
 parser.add_argument(

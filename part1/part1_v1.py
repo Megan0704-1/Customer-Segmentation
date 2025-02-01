@@ -1,40 +1,47 @@
-import argparse
 import torch
 import torchvision
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import time
+import sys
 
-parser = argparse.ArgumentParser(description="Train a simple MLP on MNIST")
+n_epochs = 5
+batch_size = 64
+log_interval = 100
 
-parser.add_argument(
-    "--batch-size",
-    type=int,
-    default=64,
-    help="Batch size for training and testing (default: 64)",
-)
 
-parser.add_argument(
-    "--epochs", type=int, default=1, help="Number of epochs to train (default: 1)"
-)
+def main():
+    import argparse
 
-parser.add_argument(
-    "--log-interval",
-    type=int,
-    default=100,
-    help="How many batches to wait before logging training status (default: 100)",
-)
+    parser = argparse.ArgumentParser(description="Train a simple MLP on MNIST")
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=64,
+        help="Batch size for training and testing (default: 64)",
+    )
+    parser.add_argument(
+        "--epochs", type=int, default=1, help="Number of epochs to train (default: 1)"
+    )
 
-args = parser.parse_args()
+    parser.add_argument(
+        "--log-interval",
+        type=int,
+        default=100,
+        help="How many batches to wait before logging training status (default: 100)",
+    )
 
-n_epochs = args.epochs  # Number of Epochs for training
-batch_size = (
-    args.batch_size
-)  # Batch size for training and testing TODO: Modify this variable to change batch size
-log_interval = (
-    args.log_interval
-)  # This variable manages how frequently do you want to print the training loss
+    args = parser.parse_args()
+
+    n_epochs = args.epochs  # Number of Epochs for training
+    batch_size = (
+        args.batch_size
+    )  # Batch size for training and testing TODO: Modify this variable to change batch size
+    log_interval = (
+        args.log_interval
+    )  # This variable manages how frequently do you want to print the training loss
+
 
 ####################################################################
 # Avoid changing the below parameters
@@ -199,3 +206,6 @@ with torch.no_grad():
             single_batch_inf_time, test_loader.batch_size
         )
     )
+
+if __name__ == "__main__":
+    main()
