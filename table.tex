@@ -1,0 +1,26 @@
+\begin{tabular}{llll}
+\toprule
+Layer Name & Input Shape & Output Shape & Weight Shape \\
+\midrule
+/conv1/Conv & [64, 3, 224, 224] & [64, 64, 112, 112] & [64, 3, 7, 7] \\
+/layer1/layer1.0/conv1/Conv & [64, 64, 56, 56] & [64, 64, 56, 56] & [64, 64, 3, 3] \\
+/layer1/layer1.0/conv2/Conv & [64, 64, 56, 56] & [64, 64, 56, 56] & [64, 64, 3, 3] \\
+/layer1/layer1.1/conv1/Conv & [64, 64, 56, 56] & [64, 64, 56, 56] & [64, 64, 3, 3] \\
+/layer1/layer1.1/conv2/Conv & [64, 64, 56, 56] & [64, 64, 56, 56] & [64, 64, 3, 3] \\
+/layer2/layer2.0/conv1/Conv & [64, 64, 56, 56] & [64, 128, 28, 28] & [128, 64, 3, 3] \\
+/layer2/layer2.0/conv2/Conv & [64, 128, 28, 28] & [64, 128, 28, 28] & [128, 128, 3, 3] \\
+/layer2/layer2.0/downsample/downsample.0/Conv & [64, 64, 56, 56] & [64, 128, 28, 28] & [128, 64, 1, 1] \\
+/layer2/layer2.1/conv1/Conv & [64, 128, 28, 28] & [64, 128, 28, 28] & [128, 128, 3, 3] \\
+/layer2/layer2.1/conv2/Conv & [64, 128, 28, 28] & [64, 128, 28, 28] & [128, 128, 3, 3] \\
+/layer3/layer3.0/conv1/Conv & [64, 128, 28, 28] & [64, 256, 14, 14] & [256, 128, 3, 3] \\
+/layer3/layer3.0/conv2/Conv & [64, 256, 14, 14] & [64, 256, 14, 14] & [256, 256, 3, 3] \\
+/layer3/layer3.0/downsample/downsample.0/Conv & [64, 128, 28, 28] & [64, 256, 14, 14] & [256, 128, 1, 1] \\
+/layer3/layer3.1/conv1/Conv & [64, 256, 14, 14] & [64, 256, 14, 14] & [256, 256, 3, 3] \\
+/layer3/layer3.1/conv2/Conv & [64, 256, 14, 14] & [64, 256, 14, 14] & [256, 256, 3, 3] \\
+/layer4/layer4.0/conv1/Conv & [64, 256, 14, 14] & [64, 512, 7, 7] & [512, 256, 3, 3] \\
+/layer4/layer4.0/conv2/Conv & [64, 512, 7, 7] & [64, 512, 7, 7] & [512, 512, 3, 3] \\
+/layer4/layer4.0/downsample/downsample.0/Conv & [64, 256, 14, 14] & [64, 512, 7, 7] & [512, 256, 1, 1] \\
+/layer4/layer4.1/conv1/Conv & [64, 512, 7, 7] & [64, 512, 7, 7] & [512, 512, 3, 3] \\
+/layer4/layer4.1/conv2/Conv & [64, 512, 7, 7] & [64, 512, 7, 7] & [512, 512, 3, 3] \\
+\bottomrule
+\end{tabular}
