@@ -200,6 +200,8 @@ for epoch in range(1, n_epochs + 1):
     test()
 
 print("Total Training time: {}".format(total_time))
+params = sum(p.numel() for p in network.parameters())
+print(f"Total params for layers--{args.layers} : {params}")
 
 ####################################################################
 # Single inference
