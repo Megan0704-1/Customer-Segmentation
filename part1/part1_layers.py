@@ -116,11 +116,11 @@ class SimpleMLP(nn.Module):
     def forward(self, x):
         x = x.view(-1, 784)
         x = F.relu(self.fc1(x))
-        if args.layers == 4:
+        if args.layers == 3:
+            x = F.relu(self.fc2(x))
+        elif args.layers == 4:
+            x = F.relu(self.fc2(x))
             x = F.relu(self.fc_add(x))
-            x = F.relu(self.fc2(x))
-        elif args.layers == 3:
-            x = F.relu(self.fc2(x))
 
         x = F.relu(self.fc3(x))
         logits = self.softmax(x)
